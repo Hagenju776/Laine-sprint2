@@ -13,4 +13,8 @@ Laine
 
 
 :: Untitled Passage {"position":"300,200","size":"100,100"}
-bla bla bla
+bla bla bla [[bar]]
+
+
+:: bar {"position":"300,325","size":"100,100"}
+He went to the bar and ordered a drink
