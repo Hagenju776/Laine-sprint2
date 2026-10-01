@@ -1,0 +1,80 @@
+:: StoryTitle
+Laine
+
+
+:: StoryData
+{
+  "ifid": "8E300785-3648-4B3F-B52E-74414CE9E1A0",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Outside The Haunted House",
+  "zoom": 1
+}
+
+
+:: 10 {"position":"1700,1800","size":"100,100"}
+[[Right Wing(6)]] west(back)
+
+
+:: 12 {"position":"100,1800","size":"100,100"}
+[[Left Wing(8)]] east(back)
+
+
+:: 13 {"position":"300,1200","size":"100,100"}
+[[Left Wing(9)]] south(back)
+
+
+:: 3 {"position":"900,1400","size":"100,100"}
+[[Unconcous Room(2)]] north(back)
+[[4]] south
+
+
+:: 4 {"position":"900,1800","size":"100,100"}
+[[3]] north(back)
+[[Right Wing(6)]] east
+[[Left Wing(8)]] west
+[[Command Room(5)]] south
+
+
+:: Caged Room(11) {"position":"1500,1200","size":"100,100"}
+[[Right Wing(7)]] south(back)
+
+
+:: Command Room(5) {"position":"900,2200","size":"100,100"}
+[[4]] north(back)
+
+
+:: Haunted House(1) {"position":"900,600","size":"100,100"}
+[[Unconcous Room(2)]] South
+Can't go back outside.
+
+
+:: Left Wing(8) {"position":"500,1800","size":"100,100"}
+[[4]] east(back)
+[[Left Wing(9)]] north
+[[12]] west
+
+
+:: Left Wing(9) {"position":"500,1400","size":"100,100"}
+[[Left Wing(8)]] south(back)
+[[13]] north
+
+
+:: Outside The Haunted House {"position":"900,200","size":"100,100"}
+[[Haunted House(1)]] South
+
+
+:: Right Wing(6) {"position":"1300,1800","size":"100,100"}
+[[4]] west(back)
+[[Right Wing(7)]] north
+[[10]] east
+
+
+:: Right Wing(7) {"position":"1300,1400","size":"100,100"}
+[[Right Wing(6)]] south(back)
+[[Caged Room(11)]] north(doesn't unlock until you figureout that it exists)
+
+
+:: Unconcous Room(2) {"position":"900,1000","size":"100,100"}
+[[3]] South
+Can't go back through the huanted house to get out.
