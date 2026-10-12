@@ -7,7 +7,7 @@ Laine
   "ifid": "8E300785-3648-4B3F-B52E-74414CE9E1A0",
   "format": "SugarCube",
   "format-version": "2.37.3",
-  "start": "Outside The Haunted House",
+  "start": "Game Intro",
   "zoom": 1
 }
 
@@ -80,7 +80,7 @@ Laine
 [[Left Wing(9)]] south(back)
 
 
-
+<<set $hasItem = true>>
 
 
 
@@ -105,53 +105,16 @@ Laine
 
 
 
-:: 3 {"position":"900,1400","size":"100,100"}
-[[Unconcous Room(2)]] north(back)
-[[4]] south
+:: 4 {"position":"900,1600","size":"100,100"}
+You follow down the hallway, and you notice the thick cables coming in and out of the walls and floor, and the walls are covered in lichen. You try to not trip over anything this time and go into a large rounded room with rails covered in vines that drape over from the second floor. The center of the room has a thick green pillar that looks like vines coming from under the metal flooring, leading up to the very top of the glass ceiling, where you can see the full moon shining. 
 
+$playerName: “Crap, it looks like it's pretty late at night… I gotta hurry up and find $bsfName.”
 
+You look around the room and see there are three different hallways, apart from the one you just came from, that lead to other rooms. You have the options to:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<set $currentRoom = "3">>
-<<if !$discoveredRooms.includes("3")>>
-    <<set $discoveredRooms.push("3")>>
-<</if>>
-
-
-
-:: 4 {"position":"900,1800","size":"100,100"}
-[[3]] north(back)
-[[Right Wing(6)]] east
-[[Left Wing(8)]] west
-[[Command Room(5)]] south
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Follow the [[east hallway|Right Wing(6)]]
+Follow the [[south hallway|Left Wing(8)]]
+Follow the [[west hallway|Captain's Quarters(5)]]
 
 
 <<set $currentRoom = "4">>
@@ -165,22 +128,40 @@ Laine
 [[Right Wing(7)]] south(back)
 
 
-:: Command Room(5) {"position":"900,2200","size":"100,100"}
-[[4]] north(back)
+
+<<set $hiddenRoomFound = true>>
+
+<<if !$timerStarted>>
+	<<set $timerStarted = true>>
+    <<set $timeLeft = 180>>
+    
+     <<script>>
+        State.variables.timerInterval = setInterval(function () {
+
+            State.variables.timeLeft--;
+
+            var timer = document.getElementById("timer-number");
+
+            if (timer) {
+                timer.textContent = State.variables.timeLeft;
+            }
+
+            if (State.variables.timeLeft <= 0) {
+                clearInterval(State.variables.timerInterval);
+                State.variables.timerInterval = null;
+
+                Engine.play("Game Over");
+            }
+
+        }, 1000);
+    <</script>>
+<</if>>
 
 
+:: Captain's Quarters(5) {"position":"900,2100","size":"100,100"}
+You follow the dark hallway that leads south, and as you come up to the entrance, you see a label on the wall in a language that you can’t read, but from what the room looks like on the inside, you can tell it was some sort of captain’s quarters. There are two sets of stairs on either side of you that lead down to the lower part, where the windows and the main console in front of the commanding chair are smashed, and there is debris scattered everywhere, as this ship had somehow crash-landed here… From what you can tell, there isn’t much to snoop around and look for. 
 
-
-
-
-
-
-
-
-
-
-
-
+Go back to the [[Round Room|Round Room (4)]]
 
 
 <<set $currentRoom = "5">>
@@ -190,28 +171,52 @@ Laine
 
 
 
+:: Escape {"position":"1300,400","size":"100,100"}
+Congratualtions! You escaped with your life and with your real friend!
+
+<<button "Play Again">>
+    <<script>>
+        Engine.restart();
+    <</script>>
+<</button>>
+
+
+:: Game Intro {"position":"900,200","size":"100,100"}
+Welcome to Laine!
+
+You are about go on an exciting, and slightly disturbing, adventure with your best friend! In order to do so you must provide a name for both you and them:
+
+What is your name?
+<<textbox "$playerName" "">>
+Enter your name and press Enter.
+
+What is your best friend's name?
+<<textbox "$bsfName" "">>
+Enter your friend's name and press Enter.
+
+As you play, keep in mind the task bar located to the left on your screen (can be opened by clicking the ">" icon). Throughout game, important information will appear that may benifit you in play.
+
+Enjoy the game: [[Start|Outside the Haunted House]]
+
+
+:: Game Over {"position":"1300,200","size":"100,100"}
+GAME OVER
+
+You have failed to escape in time.
+
+The vines were your only way out, but you weren't fast enough and you were slaughtered by the alien.
+
+<<button "Restart">>
+    <<script>>
+        Engine.restart();
+    <</script>>
+<</button>>
+
+
 :: Haunted House(1) {"position":"900,600","size":"100,100"}
-[[Unconcous Room(2)]] South
-Can't go back outside.
+As soon as you step into the first dark, foggy room, you realize you should have listened to $bsfName. You have never been this terrified in your life, and any sound or movement might make you explode with terror. But there’s no turning back now. The thick and heavy fog blurs your vision, and you can barely see a thing in front of you as you are gripping $bsfName’s hand, as if they will somehow escape from you and leave you alone in this horrible place. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Looking to your right, you see $bsfName’s panicked face as you both walk through the first part of the room. You feel bad that you dragged them along with you on this dare, but they insisted on going with you since they know you’re scared of this sort of thing. Screams echo along the walls of the hallway in front of you as you continue forward, and suddenly a black figure crashes through a hole in the wall and yells at both of you, hands flying; it grabs you and stares into your soul, except… it has no eyes, just a big… gaping… mouth? Hole? You can’t even process what’s happening to you as $bsfName screams so loud your ears start ringing and sprints off into the deeper part of the haunted house. The grip of the figure has you stuck in mid-air until it finally screams at you and releases its hold, then disappears into the blackness. You try to regain your bearings, and you bolt towards the direction that $bsfName went: [[Continue|Haunted House2(1)]]
 
 
 <<set $currentRoom = "1">>
@@ -220,8 +225,27 @@ Can't go back outside.
 <</if>>
 
 
+:: Haunted House2(1) {"position":"900,800","size":"100,100"}
+$playerName: “$bsfName?!” You shout into the unknown as you’re trying to figure out which way $bsfName went. God, this building is a maze, and you’ve never seen $bsfName run that fast in your life, so you keep calling out and looking around to see if they ended up crouched in a corner. The fog has subsided, so you can see your surroundings more clearly. The house has somehow become more terrifying as you feel like you’re hearing machines humming and crashing in the distance. 
+
+You hear a familiar scream in the distance. $bsfName... 
+
+$playerName: “$bsfName!” You sprint towards the sound, and you find a chain with a sign hanging off of it, noticing it's not a language you can read, but you can tell from the image it’s basically a DO NOT ENTER sign. 
+
+$playerName: “Gods $bsfName what did you do…” 
+
+You jump the chain and run into a room that definitely doesn’t look like a haunted house anymore. The room lights are flashing, and you can’t see all that much around you, not even beneath you, but you don’t watch your step-
+
+
+You trip over something metal and fall, slamming your face into the floor, head swimming with pain and dizzyness, and go unconscious…
+[[Continue|Unconscious Room(2)]] 
+
+
+<<set $currentRoom = "1">>
+
+
 :: Left Wing(8) {"position":"500,1800","size":"100,100"}
-[[4]] east(back)
+[[Round Room (4)]] east(back)
 [[Left Wing(9)]] north
 [[12]] west
 
@@ -280,12 +304,48 @@ Can't go back outside.
 
 
 
-:: Outside The Haunted House {"position":"900,200","size":"100,100"}
-[[Haunted House(1)]] South
+:: Outside the Haunted House {"position":"900,400","size":"100,100"}
+October 31, 1998
+It was a frigid Saturday night; you and your friends from high school decided to go to a haunted house instead of terrorizing the younger kids while trick-or-treating. You love Halloween, but haunted houses always give you the creeps… You and $bsfName meet up with the rest of the group in the parking lot of the haunt, and they're all dressed in casual clothes, while you and $bsfName are dressed up as your favorite duo from your favorite show. 
+
+One friend notices your costumes and gives you a ridiculous look,
+“Wait, why did you guys dress up? It’s not like we’re going trick-or-treating; that’s for little kids.” They snicker.
+
+You suddenly feel embarrassed as you and $bsfName look at each other, then your costumes, and realize how stupid you both look. 
+
+$bsfName: “Hey, it's not our fault! You guys couldn’t make a decision on what we were doing this Halloween and decided last minute to tell us we were going to a haunted house instead of trick-or-treating!” they fire back. 
+
+The others roll their eyes and start walking. 
+
+“Oh come on, it was time we outgrew the little kids' activity; let’s just get in line before it gets even longer,” They agree.
+
+You and your friend group get in line for tickets, and thankfully it's early enough that there aren’t that many people yet. As you buy your tickets and get in line for the actual haunted house, you’re starting to dread the experience you’re about to have in there. The house is an abandoned home that was built in the 1800s; the person who lived there was barely ever seen, and it had a history of kids disappearing when they would visit it. Around 30 minutes pass, and the line has been moving forward pretty quickly. You suddenly get a lingering feeling that something is watching you, and the hair on the back of your neck rises. You turn around slowly and see a tall figure dressed in a clown costume with a creepy mask that looks as if its face has been melted off. You almost jump from how disturbing it is. 
+
+“Whoa, $playerName, you scared of a clown?” they tease.
+
+“No! Just wasn’t expecting it…” you reply.
+
+“Whatever, you scaredy cat!!” one says.
+
+“I'm not!” You’re starting to get tired of their antics. The line moves forward again and your hands start sweating. 
+
+“I dare you and $bsfName to go first into the haunted house!” another one says.
+
+“I don't think that’s a good idea…” You hesitate. The line moves forward once more, and you’re almost at the door. 
+
+“How about this: we won’t make any more comments about your costumes or about how you are super scared right now,” one says. 
+
+Your best friend turns to you and whispers, “You know we don’t have to do this; we can just go home and watch a movie instead.”
+
+“No, I’m done with their stupid comments, it’s time to prove them wrong.” You insist, then turn to the others, who are looking at you with wicked smiles as you reply.
+
+“Deal.” 
+
+And you and $bsfName walk into the haunted house: [[Enter the Haunted House|Haunted House(1)]]
 
 
 :: Right Wing(6) {"position":"1300,1800","size":"100,100"}
-[[4]] west(back)
+[[Round Room (4)]] west(back)
 [[Right Wing(7)]] north
 [[10]] east
 
@@ -342,6 +402,47 @@ Can't go back outside.
     <<set $discoveredRooms.push("7")>>
 <</if>>
 
+<span id="wall-option">
+	<<if !$brokenWall>>
+    	<<if $hasItem>>
+        	<<button "Break down wall">>
+            	<<set $hasitem = true>>
+            	<<replace "#wall-option">>
+                	[[Caged Room(11)]] north
+                    <<set $brokenWall = true>>
+            	<</replace>>
+        	<</button>>
+    	<<else>>
+        	That wall looks odd...
+    	<</if>>
+    <<else>>
+    	[[Caged Room(11)]] north
+	<</if>>
+</span>
+
+
+:: Round Room (4) {"position":"900,1775","size":"100,100"}
+You come back to the round room; the vine pillar is still in the center of the room, and vines are spread all over the floor, some coming up from under the metal sheets. 
+
+Go down the  [[east hallway|Right Wing(6)]]
+Go down the [[south hallway|Left Wing(8)]]
+Go down the [[west hallway|Captain's Quarters(5)]]
+
+<<if $hiddenRoomFound>>
+    You take a closer look at the vines and relize that they are actually Laine - definition
+
+    <<button "Climb the vines">>
+        <<goto "Escape">>
+        <<script>>
+        clearInterval(State.variables.timerInterval);
+        State.variables.timerInterval = null;
+        State.variables.timerStarted = false;
+    <</script>>
+    <</button>>
+<<else>>
+    
+<</if>>
+<<set $currentRoom = "4">>
 
 
 :: StoryCaption {"position":"1100,400","size":"100,100"}
@@ -355,6 +456,12 @@ Can't go back outside.
 
 </div>
 
+<<if $timerStarted>>
+    <div id="countdown">
+        Time left: <span id="timer-number"><<print $timeLeft>></span>
+    </div>
+<</if>>
+
 
 :: StoryInit {"position":"1100,200","size":"100,100"}
 <<set $currentRoom = "Outside">>
@@ -362,25 +469,64 @@ Can't go back outside.
 <<set $knownRooms = []>>
 
 <<set $playerName = "">>
-<<set $characterName = "">>
+<<set $bsfName = "">>
 
 <<set $hiddenRoomFound = false>>
 
-
-:: Unconcous Room(2) {"position":"900,1000","size":"100,100"}
-[[3]] South
-Can't go back through the huanted house to get out.
-
+<<set $timerStarted = false>>
+<<set $hasItem = false>>
+<<set $brokenWall = false>>
 
 
+:: Unconscious Room Pt2(3) {"position":"900,1300","size":"100,100"}
+You crouch down and pick up the flashlight. The flickering immediately stops, and for a moment the room is completely dark. You look at it closely, then smack it on the side. The flashlight turns on, and you flinch as the light blinds your eyes.
+
+$playerName: Jesus...
+
+You turn it over in your hand. It's old, scratched, and covered in dust, but it still works... somehow. You point it toward the hallway and the beam illuminates what's in front of you, then disappears into the darkness. At least now you can see where you're going. 
+
+<<run $inventory.push("Flashlight")>>
+
+
+Follow friend: [[Continue|4]] 
+
+
+<<set $currentRoom = "3">>
+<<if !$discoveredRooms.includes("3")>>
+    <<set $discoveredRooms.push("3")>>
+<</if>>
 
 
 
+:: Unconscious Room(2) {"position":"900,1100","size":"100,100"}
+You don't know where you are.
 
+At first, there was nothing. No sound. No light. No sense of your own body.
 
+Then-
 
+You hear a faint buzzing.
 
+It comes from somewhere above you. A low, mechanical hum that seems to vibrate through the floor beneath your head. Your fingers start to twitch, and you notice a pounding on the right side of your head, so you slowly try to open your eyes, trying to remember where you are and what happened.
 
+Then you realize-
+
+The haunted house.
+
+The door leading to a pitch-black room.
+
+$bsfName screaming and sprinting off. 
+
+And your eyes widen.
+
+$playerName: "$bsfName?" You call out as you try to stand up slowly, but there's no answer. You feel really dizzy and definitely have a concussion, but you need to find $bsfName and get the hell out of here. 
+
+You look around to examine your surroundings, and it's too dark to see anything but a flashlight on the ground flickering. This definitely isn't part of the haunted house, you think, and you look down the dark hallway in front of you that disappears into the darkness. 
+
+You have no idea where you are, but you know that you need to find $bsfName, and standing around isn't going to get you anywhere.
+
+Pick up the flashlight and go to: [[Continue with Flashlight|Unconscious Room Pt2(3)]] 
+Leave the flashlight and follow friend: [[Continue without Flashlight|4]] 
 
 
 <<set $currentRoom = "2">>
