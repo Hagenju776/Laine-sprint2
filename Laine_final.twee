@@ -8,7 +8,7 @@ Laine
   "format": "SugarCube",
   "format-version": "2.37.3",
   "start": "Game Intro",
-  "zoom": 1
+  "zoom": 0.6
 }
 
 
@@ -35,7 +35,7 @@ $playerName: “Oh sh-” A huge explosion sounds behind you, but you can’t lo
 
 Well, you learned that you are very terrible at chemistry, and also that there was–is no longer anything valuable in there that could help you find &bsfName. So it's probably best to just leave the mess to Mother Nature and go look somewhere else…
 
-Go to the back [[left door|Right Wing(6)]].
+Go to the back [[left door|Right Wing(6.22)]].
 
 
 <<set $currentRoom = "10">>
@@ -44,10 +44,34 @@ Go to the back [[left door|Right Wing(6)]].
 <</if>>
 
 
+:: 10.1 {"position":"1700,1900","size":"100,100"}
+You follow the hallway down to a smaller room dragging $bsfName behind you and see that it is mostly full of shelves along the walls with a variety of tools and vials of glowing liquids… ew. Looking around, there are strange metal instruments scattered across the shelves, along with small containers filled with substances that range from bright green to deep purple. Some of the vials even have strange things floating in them, and you decide it's probably best to not question what they are. The metal walls are still covered in lichen, and a few thin vines have started growing around the shelves, wrapping themselves around the metal like they’re trying to take over the room. 
 
-:: 10.1 {"position":"1500,2300","size":"100,100"}
+$playerName: “What is all this stuff? Do aliens seriously need a whole room just for their weird little science experiments?” 
 
+$bsfName: “Click-slurp-click”
 
+You ignore $bsfName who's trying to creepy you out by pretending to be an alien.
+
+You then pick up one of the vials, holding it up to the light of your flashlight. The liquid inside flows brighter for a moment before returning to its original color. You quickly put it back, not wanting to spill any of the unknown substance all over yourself. 
+
+As you look around some more, you notice there is a small metal box that is tucked away in the bottom corner of the room, and it looks relatively untouched so you lean in closer to investigate it. It has some sort of locking mechanism on the front of the box, with a strange symbol carved into the lid. Something buzzes and startles you, but when you turn it's just $bsfName.
+
+You wait a few seconds before letting out a quiet breath that you didn’t even realize you were holding. God, you really need to stop freaking yourself out over every little noise. Then again, considering you’ve somehow ended up on what looks like an actual alien spaceship, maybe being paranoid isn’t such a bad thing. 
+
+You realize that you’re wasting time, and you slowly get up from your crouched position, but then accidentally slam your head on one of the shelves above you. Glass smashes below you as pain erupts at the back of your head so bad that you have to slam your eyes shut to keep from crying. 
+
+$playerName: “OUCH!” You yelp as you immediately put your hand on the spot where you hit your head as if you’re bleeding, not even realizing that you knocked over multiple vials, which have made a huge mess on the floor below you. You slowly open your eyes and look around to scan the catastrophe that you just caused, and notice that some of the vials have labels on them with a symbol that you can actually recognize… which is really not a good sign because you see they all have a hazardous symbol on them. 
+
+Your eyes widen, and you slowly start backing away, watching the spilled mysterious liquids inch closer and closer to each other and start bubbling more than normal chemicals would.  $bsfName lets out a low hiss, almost as if it's directed at you, as you grab their arm.
+
+You realize that something bad is about to happen and start sprinting back towards the hallway dragging $bsfName behind you, but you’re not fast enough. 
+
+$playerName: “Oh sh-” A huge explosion sounds behind you, but you can’t look back before you get blasted from it, launching you into the middle of the laboratory. Thank goodness you don’t hit your head on anything else since you’re not sure your head can take any more impacts. 
+
+Well, you learned that you are very terrible at chemistry, so it's probably best to just leave the mess to Mother Nature and go look somewhere else for an exit…
+
+Go to the [[back|Right Wing(6.11)]].
 
 <<set $currentRoom = "10">>
 
@@ -92,7 +116,6 @@ $bsfName: "le#avi*ng..."
 <</if>>
 
 
-
 :: 13 {"position":"300,1200","size":"100,100"}
 Not much of a room, looks to be some type of storage area but its too hard to tell because the vines have mostly overtaken this area.
 
@@ -133,7 +156,6 @@ $playerName: "Dude I think you hit your head or something. Come on."
 <</if>>
 
 
-
 :: 4 {"position":"900,1525","size":"100,100"}
 You follow down the hallway, and you notice the thick cables coming in and out of the walls and floor, and the walls are covered in lichen. You try to not trip over anything this time and go into a large rounded room with rails covered in vines that drape over from the second floor. The center of the room has a thick green pillar that looks like vines coming from under the metal flooring, leading up to the very top of the glass ceiling, where you can see the full moon shining. 
 
@@ -151,6 +173,54 @@ Follow the [[west hallway|Left Wing(8)]]
     <<set $discoveredRooms.push("4")>>
 <</if>>
 
+
+:: 4.2 {"position":"900,1925","size":"100,100"}
+You and &bsfName quickly sprint to the center of the huge round room, but then you realize that you can’t go back to the haunted house since it's blocked off. 
+
+&bsfName: “What do we do? There’s no way out, and it’s right behind us!” their tone is getting more urgent. 
+
+You quickly look around the room, trying to find maybe a broken wall that you both could climb through. Not finding anything, you look up at the glass ceiling to see if theres a possible hole, and sure enough, at the very tip top of the ceiling is a broken hole that looks like a person can squeeze right through it… but there’s no way up that high. You then look at the green pillar that’s in front of you and inspect the thick vine pillar, trying to recall why you recognize those vines… 
+
+$playerName: “Of course…” You mutter to yourself as you realize why, “&bsfName, that’s our way out, but it’s going to be quite the climb,” You point towards the top of the pillar that goes out of the hole towards the sky, as if it was the thing that broke open the ceiling. 
+
+&bsfName: “How do you know those vines won’t snap right off once we put our weight on it?” they question. 
+
+$playerName: “It won’t, the vine is called ‘Laine,’ and from the looks of it, those vines are wrapped so tightly around each other that it would take a lot for them to break. Come on, we have to at least try, it's our only hope!” You start heading towards the pillar. 
+
+As you and &bsfName ascend towards the ceiling, you remember all the times that you went into the woods to climb trees when you were a kid. All those boring science lessons that your dad gave you whenever he’d come across a cool looking plant really proved how handy that information was. 
+
+You hear the screeches of the alien as its loud, thumping footsteps get terrifyingly closer, which causes you and &bsfName to climb even faster. The alien jerks its head up towards the ceiling and locks eyes with you. Screeching again, its tall lanky body starts to climb up the vines, only making a few feet up before the vines break below it and falls back onto the ground, smacking its slimy body onto the metal.  
+
+&bsfName “Hurry!” they shout below you, and that’s exactly what you do. 
+Finally, you get to the top and step carefully onto the top side of the glass ceiling, then you crouch back down looking towards the vines with your hand stretched out towards &bsfName. You see the alien has found its way back to climbing the pillar again and your heart lurches as you see it only a minute away from grabbing &bsfName. 
+
+$playerName: “Come on &bsfName!” You stretch your whole arm out even further, as soon as &bsfName grabs onto you, you pull with all your might and bring them up to the surface. You see out of the corner of your eye a dark figure, the alien, has launched itself towards &bsfName, but was just a few inches short, and as if it was in slow motion, goes back down in free fall. A cry shrieks out as you hear a loud slam that even vibrates where you stand, and you and &bsfName don’t even stay around to look if it was dead, but you realize that you both are on the rooftop of the haunted house… 
+
+You and &bsfName eventually find your way down and are at the back of the building, and you catch a glimpse of your friend group walking out of the building, looking very bored with everything. They see you and &bsfName and have amused faces as you realize that you both probably look like trainwrecks. 
+
+One of them laughs “Hey $playerName! Got too scared from the haunted house? We heard shrieking from you guys not even 5 minutes in!” You and &bsfName look at each other and shake your heads in disbelief, then start walking back home. 
+
+[[THE END|Escape]]
+
+
+<<set $currentRoom = "4">>
+
+
+:: 6.3 {"position":"1400,1700","size":"100,100"}
+You are now back in the alien medical bay with the metal tables. The amputated body is still laying on the far metal table staring back at you.
+
+Continue to [[Round Room|4.2]]
+
+<<set $currentRoom = "6">>
+
+
+
+:: 6.31 {"position":"1500,1600","size":"100,100"}
+You are now back in the alien medical bay with the metal tables. The amputated body is still laying on the far metal table staring back at you.
+
+Continue to [[Round Room|Round Room (4)]]
+
+<<set $currentRoom = "6">>
 
 
 :: Caged Room(11) {"position":"1500,1200","size":"100,100"}
@@ -205,7 +275,6 @@ Go back to the [[Round Room|Round Room (4)]]
 <</if>>
 
 
-
 :: Escape {"position":"1300,400","size":"100,100"}
 Congratualtions! You escaped with your life and with your real friend!
 
@@ -214,6 +283,13 @@ Congratualtions! You escaped with your life and with your real friend!
         Engine.restart();
     <</script>>
 <</button>>
+
+
+<<script>>
+        clearInterval(State.variables.timerInterval);
+        State.variables.timerInterval = null;
+        State.variables.timerStarted = false;
+<</script>>
 
 
 :: Game Intro {"position":"900,200","size":"100,100"}
@@ -313,7 +389,6 @@ You can go to:
 <</if>>
 
 
-
 :: Left Wing(8.1) {"position":"400,1700","size":"100,100"}
 Back in the previous docking station room, your only focus is getting out, and getting out quickly.
 
@@ -328,7 +403,6 @@ Go to [[Keep exploring North|Left Wing(9.1)]]?
 <</if>>
 
 
-
 :: Left Wing(8.2) {"position":"300,1600","size":"100,100"}
 It's time to [[explore a different part of the ship|Round Room(4.1)]]. You've had enough creepy encounters and need to get out of here.
 
@@ -337,7 +411,6 @@ It's time to [[explore a different part of the ship|Round Room(4.1)]]. You've ha
 <<if !$discoveredRooms.includes("8")>>
     <<set $discoveredRooms.push("8")>>
 <</if>>
-
 
 
 :: Left Wing(9) {"position":"500,1400","size":"100,100"}
@@ -370,7 +443,6 @@ Go [[back the way you came|Left Wing(8.2)]].
 <<if !$discoveredRooms.includes("9")>>
     <<set $discoveredRooms.push("9")>>
 <</if>>
-
 
 
 :: Left Wing(9.1) {"position":"375,1400","size":"100,100"}
@@ -466,7 +538,6 @@ Follow the [[East Door|10]]
 <</if>>
 
 
-
 :: Right Wing(6.1) {"position":"1200,1900","size":"100,100"}
 You follow the eastern hallway, noticing that the lichen covering the walls becomes thicker the farther you go. The machinery's hum grows louder until you reach a doorway with a flickering light above it. You step inside what looks like a laboratory, with multiple metal tables lined up in rows and strange tools scattered across their surfaces. Glass containers filled with liquids of different colors sit on shelves along the walls, and thick tubes run from the ceiling into various machines. You best idea is that the equipment is some sort of alien ware, definitly not made for people like you or $bsfName.
 
@@ -487,7 +558,23 @@ You look around and notice two doors. One [[in front|Right Wing(7.1)]] of you an
 <<set $currentRoom = "6">>
 
 
-:: Right Wing(7) {"position":"1300,1400","size":"100,100"}
+:: Right Wing(6.11) {"position":"1100,2000","size":"100,100"}
+You are now back in the alien medical bay with the metal tables. The amputated body is still laying on the far metal table staring back at you.
+
+Continue to [[north door|Right Wing(7.1)]]
+
+<<set $currentRoom = "6">>
+
+
+:: Right Wing(6.22) {"position":"1600,1500","size":"100,100"}
+You are now back in the alien medical bay with the metal tables. The amputated body is still laying on the far metal table staring back at you.
+
+Continue to [[north door|Right Wing(7)]]
+
+<<set $currentRoom = "6">>
+
+
+:: Right Wing(7) {"position":"1400,1400","size":"100,100"}
 You walk to the door and use all of your weight to push it open as you quickly fall through and almost fall to the floor of the new room. You then realize that you have found yourself in a large room lined with rows of glass containers. Thick cables connect each container to machines along the walls, and dim green lights illuminate the strange liquids inside. You shine your flashlight toward the nearest container and freeze.
 Something is floating inside.
 You move closer, trying to get a better look. The creature has pale, almost translucent skin, with long limbs folded awkwardly against its body. Thin tubes run from the back of its neck into the machine holding it in place, and bubbles occasionally rise through the cloudy liquid surrounding it.
@@ -504,12 +591,14 @@ $playerName: "...Nope. Absolutely not."
 
 Just as you start to turn away, you notice that there may be a hidden door behind one of the glass containers, and you don’t really want to stick around to find out, but you are kinda curious as to what may lie behind there…
 
+Maybe you can find something in another part of the ship that will unlock the door?
+
 Go towards the hidden door
 Leave and go back to Room 6
 <span id="wall-option">
 	<<if !$brokenWall>>
     	<<if $hasItem>>
-        	<<button "Break down wall">>
+        	<<button "Open Door">>
             	<<set $hasitem = true>>
             	<<replace "#wall-option">>
                 	[[Caged Room(11)]] north
@@ -517,11 +606,11 @@ Leave and go back to Room 6
             	<</replace>>
         	<</button>>
     	<<else>>
-        	[[Back through door|Right Wing(6)]]
+        	[[Back through door|6.31]]
             That wall looks odd?
     	<</if>>
     <<else>>
-    	[[Caged Room(11)]] north
+    	[[Caged Room(11)]]
 	<</if>>
 </span>
 
@@ -531,9 +620,56 @@ Leave and go back to Room 6
 <</if>>
 
 
-:: Right Wing(7.1) {"position":"1300,2100","size":"100,100"}
+:: Right Wing(7.1) {"position":"1200,1400","size":"100,100"}
+You walk to the door and use all of your weight to push it open as you quickly fall through and almost fall to the floor of the new room. You then realize that you have found yourself in a large room lined with rows of glass containers. Thick cables connect each container to machines along the walls, and dim green lights illuminate the strange liquids inside. You shine your flashlight toward the nearest container and freeze.
+Something is floating inside.
+You move closer, trying to get a better look. The creature has pale, almost translucent skin, with long limbs folded awkwardly against its body. Thin tubes run from the back of its neck into the machine holding it in place, and bubbles occasionally rise through the cloudy liquid surrounding it.
 
+$playerName: "What is that thing...?"
 
+$bsfName: “Uns*ure”
+
+You move farther into the room, looking at the other containers. Some hold creatures with too many limbs, strange shapes, and features you can't even begin to identify. Others are covered in condensation, making it impossible to see what's inside. You aren't sure whether these things are dead or alive, but every so often, you notice one twitching beneath the liquid.
+
+You turn to find $bsfName’s hand up against one of the containers, looking longingly at the… thing… inside of it.
+
+$playerName: “Do you have any idea what that is?”
+
+$bsfName: “Y#es”
+
+$playerName: “You do?”
+
+$bsfName: “N0”
+
+$playerName: “Uhh… ok?”
+
+Then you notice a container near the back of the room.
+It's empty.
+The glass is cracked, and the metal restraints inside have been bent outward. Deep scratches cover the interior walls, as though whatever was being held there had desperately tried to escape.
+You slowly back away.
+
+$playerName: "...Nope. Absolutely not."
+
+As you start to turn, you are suddenly stopped. Not just by $bsfName ominous standing over you, eyes wide, but also by a faint crease hidden behind one of the containers that looks like it might be able to open…
+
+<span id="wall-option">
+	<<if !$brokenWall>>
+    	<<if $hasItem>>
+        	<<button "Open door">>
+            	<<set $hasitem = true>>
+            	<<replace "#wall-option">>
+                	[[Caged Room(11)]] north
+                    <<set $brokenWall = true>>
+            	<</replace>>
+        	<</button>>
+    	<<else>>
+        	[[Back through door|6.3]]
+            That wall looks odd?
+    	<</if>>
+    <<else>>
+    	[[Caged Room(11)]] 
+	<</if>>
+</span>
 
 <<set $currentRoom = "7">>
 
@@ -637,7 +773,6 @@ Follow friend: [[Continue|4]]
 <</if>>
 
 
-
 :: Unconscious Room(2) {"position":"900,1100","size":"100,100"}
 You don't know where you are.
 
@@ -676,7 +811,6 @@ Leave the flashlight and follow friend: [[Continue without Flashlight|4]]
 <<if !$discoveredRooms.includes("3")>>
     <<set $discoveredRooms.push("3")>>
 <</if>>
-
 
 
 :: StoryScript [script]
