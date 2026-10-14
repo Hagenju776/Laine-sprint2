@@ -1,10 +1,10 @@
 :: StoryTitle
-Laine
+Laine 2
 
 
 :: StoryData
 {
-  "ifid": "8E300785-3648-4B3F-B52E-74414CE9E1A0",
+  "ifid": "3d590de9-145e-4178-a8f0-a0aeaa5a0882",
   "format": "SugarCube",
   "format-version": "2.37.3",
   "start": "Game Intro",
@@ -74,6 +74,58 @@ Well, you learned that you are very terrible at chemistry, so it's probably best
 Go to the [[back|Right Wing(6.11)]].
 
 <<set $currentRoom = "10">>
+
+
+:: 11.2 {"position":"1600,1100","size":"100,100"}
+Now you can focus your attention on rescuing the real $bsfName. Taking up the metal pipe again, you use the full force of your strength, which is not that much, and you slam the pipe into the container once, twice; by the third time, it finally smashes open, splashing the liquid all over you and the floor. The feeling of it on you is slimy and sticky… gross, but you ignore it so you can focus on &bsfName’s limp body splayed on the floor. 
+
+$playerName: “&bsfName!” You scoot towards their body, and you grip their shoulders and shake them violently, desperately trying to wake &bsfName up. 
+
+&bsfName’s eyes shoot open, and they lean over to violently cough up the liquid that was inside the container. Relief hits you like a brick wall after you see that &bsfName is alive. You scan their body to see if they have any injuries that are showing on the outside, and you find none, which is hopefully a good sign. 
+
+$playerName: “Hey, you okay? What happened to you?” &bsfName looks back at you with a faint smile. 
+
+&bsfName: “Yeah, I’m alright… though I’m not sure what happened, one moment I was running from the jumpscare, then the next moment I got knocked in the head by something and I don’t remember much after that.” They slowly stand up, prompting you to do as well since it seems you both are ready to get out of here as soon as possible. 
+
+$playerName: “Well you can explain later, we should get out of here, now,” You and &bsfName [[follow the hallway|11.3]] back to the room you came from. 
+
+<<set $currentRoom = "11">>
+
+
+:: 11.3 {"position":"1700,1000","size":"100,100"}
+You have 3 minutes to [[escape|6.3]] the ship before the alien comes back to kill you and $bsfName. (Your timer can be found above your map in the left side bar.)
+
+Good luck, you’ll need it…
+
+<<set $hiddenRoomFound = true>>
+
+<<if !$timerStarted>>
+	<<set $timerStarted = true>>
+    <<set $timeLeft = 180>>
+    
+     <<script>>
+        State.variables.timerInterval = setInterval(function () {
+
+            State.variables.timeLeft--;
+
+            var timer = document.getElementById("timer-number");
+
+            if (timer) {
+                timer.textContent = State.variables.timeLeft;
+            }
+
+            if (State.variables.timeLeft <= 0) {
+                clearInterval(State.variables.timerInterval);
+                State.variables.timerInterval = null;
+
+                Engine.play("Game Over");
+            }
+
+        }, 1000);
+    <</script>>
+<</if>>
+
+<<set $currentRoom = "11">>
 
 
 :: 12 {"position":"100,1800","size":"100,100"}
@@ -156,6 +208,33 @@ $playerName: "Dude I think you hit your head or something. Come on."
 <</if>>
 
 
+:: 1st Alien Attack {"position":"1400,2200","size":"100,100"}
+<<set $playerHP = 100>>
+Alien: I see the truth has been revealed. I was that you'd wear youself out, that way I could lock you up like them. (pointing at $bsfName)
+
+Alien: It seems now I'll just have to force you!!
+
+<<if setup.inventory.tools.includes("Rusty Pipe")>>
+    The alien lunges — but you swing the pipe and knock it back.
+    It screeches and retreats into the shadows.
+    
+    $playerName: Come on $bsfName/, we need to get out of here. 
+    [[Fend off the alien]]
+    [[Run]]
+ <<else>>
+    The alien lunges — you’re defenseless.
+    Its claws rake across your arm.
+    
+    <<set $playerHP -= 20>>
+    You're in pain, but in order to ensure your friend's safety, you yell out...
+    $playName: $bsfName go!! I'm right behind you.
+    
+    [[Fend off the alien]]
+    [[Run]]
+<</if>>
+
+
+
 :: 4 {"position":"900,1525","size":"100,100"}
 You follow down the hallway, and you notice the thick cables coming in and out of the walls and floor, and the walls are covered in lichen. You try to not trip over anything this time and go into a large rounded room with rails covered in vines that drape over from the second floor. The center of the room has a thick green pillar that looks like vines coming from under the metal flooring, leading up to the very top of the glass ceiling, where you can see the full moon shining. 
 
@@ -224,37 +303,45 @@ Continue to [[Round Room|Round Room (4)]]
 
 
 :: Caged Room(11) {"position":"1500,1200","size":"100,100"}
-[[Right Wing(7)]] south(back)
-A timer has started, you have angered the alien and have 3 minutes to find a way out.
+You slowly approach the door that’s been hiding behind a broken alien container this whole time, $bsfName in tow. You hold up the key-shaped item to the scanner, and it waves a holographic wave up and down the key, then the screen glows green, and the door slowly opens. The hallway that leads to the room is pitch black and foggy, which makes the hair on the back of your neck rise. This reminds you too much of the haunted house from earlier, this has to be the way out, right? 
+
+Slowly, you walk down the dark hallway, flashlight in hand, and you make your way towards the room. You shine it around the room, and you don’t see any sign of an exit. Eventually, your light passes a large green glass container. 
+
+$playerName: “What the-” You flash it back, and the green glass container, which sort of looks similar to the alien containers that you saw earlier, is pretty foggy and has liquid inside. You walk towards it, but something about this room is giving you a weird, eerie feeling, and you are not a fan. A machine suddenly kicks into gear, and your heart rate skyrockets as you whip your head towards the sound… but nothing is there… of course not; it's a machine… not an alien. You turn your head back towards the container and inspect the inside of the glass. You notice that something is floating in there… wait, not something… someone-
+
+$playerName: “What..the..fuck…”
+
+It’s $bsfName, floating still in the container ahead of you.
+
+But that can’t be right… $bsfName has been with you the whole-
+
+$playerName: “oh shit…”
+
+Slowly, you turn your head.
+
+$bsfName stands behind you: “H3lloooo FrIeN*D. Wh@T haV3 yOu f*Oun#d؟”
+
+$playerName: “OH SHIT OH FUCK OH SHIT”
+
+You start panicking and quickly look around the room to try to find something to defend yourself with- a button, a hammer, or maybe– you realize that you’ve got a metal pipe still strapped to you. You quickly grab the cool, rusty pipe and hold it with two hands as you get into a baseball player position, preparing to swing.
+
+Ahead of you $bsfName… no, the thing impersonating them looks back at you. It stares, deep, into you, making you feel cold and scared. Scared for your life, you’ve been with a- a, god knows WHAT that thing is. 
+
+Then it peels.
+
+Slowly, grossly, disgustingly peels away the outer skin to reveal the thing underneath.
+
+Revealing in front of you, is a tall lanky gray figure, whose feet are huge and webbed, with skinny legs that connect with its bony hips and torso that show skin and ribs. Its neck is at least a foot long and bony, and it’s head… all you see are teeth and a long head that goes almost down its back, and very tiny black beady eyes. Its mouth is drooling, as if it's been waiting years to devour you limb from limb. Long bony arms hang from its sides, with fingers that are huge and claw like that could very well tear you apart. 
+
+The thing, which you now believe to be an alien, specifically the one from the broken pod, is mad. Very mad.
+
+And it charges.
+
+With the metal pipe in your hands you take a blind swing as it approaches and… miss. Swing and a miss, of course. The alien hits you like a wall and you go flying into the pod. The pipe is released from your hands and you grasp at air as you crawl towards it. You finally gather the strength to stand and this time, as the alien approaches once again, you swing hard, with your eyes open and land a clean hit. The alien makes what you think -what you hope- is a whimper and scurried away.
+
+You’re not sure how long it will be gone so while you can you need to [[break|11.2]] $bsfName’s pod.
 
 
-<<set $hiddenRoomFound = true>>
-
-<<if !$timerStarted>>
-	<<set $timerStarted = true>>
-    <<set $timeLeft = 180>>
-    
-     <<script>>
-        State.variables.timerInterval = setInterval(function () {
-
-            State.variables.timeLeft--;
-
-            var timer = document.getElementById("timer-number");
-
-            if (timer) {
-                timer.textContent = State.variables.timeLeft;
-            }
-
-            if (State.variables.timeLeft <= 0) {
-                clearInterval(State.variables.timerInterval);
-                State.variables.timerInterval = null;
-
-                Engine.play("Game Over");
-            }
-
-        }, 1000);
-    <</script>>
-<</if>>
 
 <<set $currentRoom = "11">>
 
@@ -290,6 +377,40 @@ Congratualtions! You escaped with your life and with your real friend!
         State.variables.timerInterval = null;
         State.variables.timerStarted = false;
 <</script>>
+
+
+:: Fend off the alien {"position":"1500,2350","size":"100,100"}
+\:: Fend off the alien
+
+The alien snarls and lunges again.
+
+<<if setup.inventory.tools.includes("Rusty Pipe")>>
+    You swing the Rusty Pipe with all your strength.
+    <<set $alienHP -= 20>>
+<<else>>
+    You try to dodge, but you have nothing to defend yourself with.
+    <<set $alienHP -= 5>>
+<</if>>
+
+Your HP: $playerHP  
+Alien HP: $alienHP  
+
+<<if $playerHP <= 0>>
+    You collapse. The alien looms over you.
+    <<goto "Game Over2">>
+<</if>>
+
+<<if $alienHP <= 0>>
+    The alien screeches and collapses, its disguise flickering.
+    <<set $alienDrivenOff = true>>
+    <<goto "Alien Defeated">>
+<</if>>
+
+The alien circles you, preparing to strike again.
+
+[[Keep Fighting|Fend off the alien]]
+[[Try to Run|Run]]
+
 
 
 :: Game Intro {"position":"900,200","size":"100,100"}
@@ -719,6 +840,10 @@ Go down the [[south hallway|Captain's Quarters(5)]]
     
 <</if>>
 <<set $currentRoom = "4">>
+
+
+:: Run {"position":"1300,2325","size":"100,100"}
+
 
 
 :: StoryCaption {"position":"1100,400","size":"100,100"}
@@ -1280,3 +1405,225 @@ if (discovered.includes("3") && discovered.includes("4")) {
     /* Put the fog INSIDE the map container */
     container.appendChild(fog);
 });
+/* Inventory System */
+setup.inventory = {
+    tools: [],
+    gear: [],
+    add(item, category) {
+        setup.inventory[category].push(item);
+    },
+    remove(item, category) {
+        const list = setup.inventory[category];
+        const index = list.indexOf(item);
+        if (index !== -1) list.splice(index, 1);
+    }
+};
+
+/* ============================
+   INVENTORY DATA
+   ============================ */
+setup.inventory = { 
+  tools: [], 
+  gear: [] 
+};
+
+$(document).one(':passageinit', function () {
+  // create button once
+  if ($('#my-inventory-button').length === 0) {
+    const $btn = $('<div id="my-inventory-button" class="ui-button">Inventory</div>');
+    // append into SugarCube's bar if it exists, otherwise append to body
+    const $container = $('#ui-bar-body').length ? $('#ui-bar-body') : $('body');
+    $container.append($btn);
+  }
+});
+
+/* ============================
+   ADD FUNCTIONS (NO DUPLICATES)
+   ============================ */
+setup.addTool = function (item) {
+  if (!setup.inventory.tools.includes(item)) {
+    setup.inventory.tools.push(item);
+    setup.refreshInventoryPanel();
+  }
+};
+
+setup.addGear = function (item) {
+  if (!setup.inventory.gear.includes(item)) {
+    setup.inventory.gear.push(item);
+    setup.refreshInventoryPanel();
+  }
+};
+
+
+/* ============================
+   REFRESH INVENTORY PANEL
+   ============================ */
+setup.refreshInventoryPanel = function () {
+  const inv = setup.inventory;
+  let html = "<div class='inventory-box'>";
+
+  /* Tools */
+  html += "<h3>Tools</h3>";
+  if (inv.tools.length) {
+    inv.tools.forEach(t => {
+      html += `
+        <div class="item-row">
+          <div class="item-icon">🛠️</div>
+          <span>${t}</span>
+        </div>
+      `;
+    });
+  } else {
+    html += "<p><em>No tools</em></p>";
+  }
+
+  /* Gear */
+  html += "<h3>Gear</h3>";
+  if (inv.gear.length) {
+    inv.gear.forEach(g => {
+      html += `
+        <div class="item-row">
+          <div class="item-icon">🎒</div>
+          <span>${g}</span>
+        </div>
+      `;
+    });
+  } else {
+    html += "<p><em>No gear</em></p>";
+  }
+
+  html += "</div>";
+
+  // Create panel if missing
+  if ($('#inventory-panel').length === 0) {
+    $('body').append('<div id="inventory-panel" class="hidden"></div>');
+  }
+
+  // Update contents
+  $('#inventory-panel').html(html);
+};
+
+
+/* ============================
+   INVENTORY BUTTON CLICK HANDLER
+   ============================ */
+$(document).on('click', '#my-inventory-button', function () {
+  setup.refreshInventoryPanel();
+  $('#inventory-panel').toggleClass('hidden');
+});
+
+:: StoryStylesheet [stylesheet]
+/* Inventory button in the UI bar */
+#my-inventory-button {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 6px;
+  background: linear-gradient(#2b2b2b, #1f1f1f);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  user-select: none;
+}
+
+/* Inventory panel */
+#inventory-panel {
+  position: fixed;
+  right: 12px;
+  top: 64px;
+  width: 150px;
+  max-height: 60vh;
+  overflow: auto;
+  background: #111;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px;
+  z-index: 9999;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: transform 180ms ease, opacity 180ms ease;
+  transform-origin: top right;
+}
+
+/* Hidden state for toggling */
+#inventory-panel.hidden {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+/* Inventory content */
+.inventory-box h3 {
+  margin: 6px 0 8px 0;
+  font-size: 0.95rem;
+  color: #ffd;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+}
+
+/* Item rows */
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  border-radius: 4px;
+}
+.item-row:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* Icon placeholder */
+.item-icon {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(#444,#222);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+/* Quantity badge */
+.qty-badge {
+  margin-left: auto;
+  background: #2a7;
+  color: #012;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Durability bar */
+.durability {
+  height: 6px;
+  background: #222;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+.durability > i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg,#4caf50,#ffeb3b,#f44336);
+  width: 100%;
+  transform-origin: left center;
+}
+
+/* Tooltip */
+.item-tooltip {
+  display: none;
+  position: absolute;
+  background: #0b0b0b;
+  color: #ddd;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.item-row:hover .item-tooltip { display: block; }
